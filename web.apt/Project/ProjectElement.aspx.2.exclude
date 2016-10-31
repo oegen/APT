@@ -1,0 +1,64 @@
+﻿<%@ Page Language="VB" AutoEventWireup="false" CodeFile="ProjectElement.aspx.vb" Inherits="Project_ProjectElement" MasterPageFile="~/MasterPages/TabPage.master" MaintainScrollPositionOnPostback="true" %>
+<%@ Register Src="~/Controls/Element/Element.ascx" TagPrefix="oegen" TagName="Element" %>
+
+<asp:Content ID="content1" runat="server" ContentPlaceHolderID="ContentPlaceHolder1">
+
+<div id="tabs-4" class="tabswrap">
+
+    <div id="elements" class="group">  
+        <div id="form-title-wrap">
+            <div class="form-title"><h2>Magners drip tray</h2></div>
+            <div class="form-info-btn">
+            <a href="" class="someClass" 
+                title="Form Information to make it easier for the user. Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.">
+                <asp:Image ID="imgFormInfoBtn" runat="server" ImageUrl="~/App_Themes/_default/images/form-info-btn.png" AlternateText="" />
+            </a>
+            </div>
+        </div>
+
+        <!-- TODO: Validation Summary
+        <div id="error-message">
+            <h3>There are some errors with the form, please correct them below.</h3>
+            <ul>
+                <li><span>Full Name or Organisation can't be empty</span></li>
+                <li><span>Full Name or Oragnisation is too short</span></li>
+                <li><span>Forum/Display Name can't be empty</span></li>
+            </ul>
+        </div>
+        -->
+        
+        <!--ACCORDIAN STARTS-->
+        <div id="accordion">
+           
+            <h3><a href="#">Williams Lee</a></h3>       
+
+            <oegen:Element ID="ctrlElement" runat="server" />
+            
+            <h3><a href="#">MDA</a></h3>
+            
+            <div></div>
+            
+            <h3><a href="#">Procurement</a></h3>
+            
+            <div></div>
+
+        </div>
+        <!--ACCORDIAN ENDS-->
+        
+        <!--ELEMENTS NAV STARTS-->                 
+        <div id="right-nav">
+            <div class="right-nav-inner">
+                <h2>Added Elements</h2>
+                <ul>
+                    <li><a href="#">Magners special price poster</a></li>                    <li class="selected"><a href="#">Magners MTB posters</a></li>                    <li><a href="#">Magners drip mats</a></li>                    <li><a href="#">Magners font dangler</a></li>                    <li><a href="#">Magners staff briefer</a></li>                    <li><a href="#">Magners new install poster</a></li>
+                </ul>
+                <div class="right-btn btn_orange"><a href="#">Add New Element</a><span></span></div>
+            </div>
+        </div>
+        <!--ELEMENTS NAV ENDS--> 
+    
+    </div>                             
+</div>
+
+</asp:Content> 
+

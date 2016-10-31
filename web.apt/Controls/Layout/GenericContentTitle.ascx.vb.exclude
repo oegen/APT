@@ -1,0 +1,31 @@
+﻿'----------------------------------------------------------------------------------------------
+' Filename    : GenericContentTitle.ascx.vb
+' Description :
+'
+' Release Initials  Date        Comment
+' 1       TL        25/07/2011  First release.
+'----------------------------------------------------------------------------------------------
+
+
+Partial Class Controls_Layout_GenericContentTitle
+    Inherits System.Web.UI.UserControl
+
+    Public Property Title As String 
+        Get
+            Return ltlTitle.Text
+        End Get
+        Set(ByVal value As String)
+            ltlTitle.Text = value
+        End Set
+    End Property
+
+    Public Property SubTitle As String
+        Get
+            Return ltlSubTitle.Text
+        End Get
+        Set(ByVal value As String)
+            ltlSubTitle.Text = value
+        End Set
+    End Property
+
+End Class

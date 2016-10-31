@@ -1,0 +1,64 @@
+﻿<%@ Master Language="VB" CodeFile="TabPage.master.vb" Inherits="MasterPages_TabPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+
+<head runat="server">
+
+  <meta charset="utf-8">
+
+  <title></title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="favicon.ico" />
+  <link rel="apple-touch-icon" runat="server" href="~/App_Themes/_default/images/apple-touch-icon.png" />
+
+  <link rel="stylesheet" href="~/App_Themes/_default/main.css" />
+  <link href="~/App_Themes/_default/date_picker/css/ui-lightness/jquery-ui-1.8.14.custom.css" rel="stylesheet" type="text/css"/>
+  <link rel="stylesheet" href="~/App_Themes/_default/tipTip.css" />
+  
+  <script src="../js/libs/modernizr-1.6.min.js"></script>
+
+</head>
+<body>
+    <form id="form1" runat="server">
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </form>
+
+    <script type="text/javascript" src="../js/jquery.ui.datepicker.js"></script>
+    <script type="text/javascript" src="../js/jquery.tipTip.js"></script>
+    <script type="text/javascript" src="../js/jquery.ui.accordion.js"></script>
+
+
+    <script type="text/javascript">
+        $(function () {
+            $(".datepicker").datepicker({ dateFormat: 'dd/mm/yy' });
+        });
+    </script> 
+
+     <!-- Tool tip -->
+     <script type="text/javascript">
+         $(function () {
+             $(".someClass").tipTip();
+         });
+     </script> 
+                          
+    <script type="text/javascript">
+        $(function () {
+            $("#accordion").accordion();
+        });
+    </script>
+
+
+</body>
+
+

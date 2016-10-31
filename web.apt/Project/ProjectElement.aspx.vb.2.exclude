@@ -1,0 +1,13 @@
+﻿'----------------------------------------------------------------------------------------------
+' Filename    : ProjectElement.aspx.vb
+' Description :
+'
+' Release Initials  Date        Comment
+' 1       TL        25/07/2011  First release.
+'----------------------------------------------------------------------------------------------
+
+
+Partial Class Project_ProjectElement
+    Inherits System.Web.UI.Page
+
+End Class

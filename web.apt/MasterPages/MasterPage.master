@@ -1,0 +1,274 @@
+﻿<%@ Master Language="VB" CodeFile="MasterPage.master.vb" Inherits="MasterPage" %>
+<%@ Register Src="~/Controls/Navigation/TopBar.ascx" TagName="TopBar" TagPrefix="oegen" %>
+<%@ Register Src="~/Controls/Navigation/LeftNav.ascx" TagName="LeftNav" TagPrefix="oegen" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html lang="en" class="no-js">
+<!--<![endif]-->
+
+<head runat="server">
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="apple-touch-icon" runat="server" href="~/App_Themes/_default/images/apple-touch-icon.png" />
+    <link runat="server" rel="stylesheet" href="~/App_Themes/_default/main.css" />
+    <link runat="server" href="~/App_Themes/_default/date_picker/css/ui-lightness/jquery-ui-1.8.14.custom.css" rel="stylesheet" type="text/css" />
+    <link runat="server" rel="stylesheet" href="~/App_Themes/_default/tipTip.css" />
+    <script src="<%#ResolveUrl("~/js/libs/modernizr-1.6.min.js")%>"></script>
+    <script src="<%#ResolveUrl("~/js/jquery.js")%>"></script>
+    <script>!window.jQuery && document.write(unescape('%3Cscript src="js/libs/jquery-1.6.1.min.js"%3E%3C/script%3E'))</script>  
+    <script type="text/javascript" language="JavaScript" src="<%#ResolveUrl("~/js/jquery.modaldialog.js")%>"></script>
+</head>
+
+<body>
+    <form id="form1" runat="server">
+    
+     <script type="text/javascript">
+         $(function () {
+             $(".datepicker").datepicker({ dateFormat: 'dd/mm/yy',
+                 beforeShowDay: $.datepicker.noWeekends
+             });
+         });
+    </script>
+
+    <!-- Popup message -->
+    <asp:Literal ID="ltlConfirmationMessage" runat="server" EnableViewState="false"></asp:Literal>
+
+    <div id="top"></div>
+
+    <!-- Top Bar Control -->
+    <oegen:TopBar ID="ctrlTopBar" runat="server" />
+
+    <div id="molson-coors-logo">
+    
+        <div id="container">
+
+            <div id="pageflip">
+
+                <asp:HyperLink runat="server" NavigateUrl="~/Project/NewProject.aspx">
+                    <asp:Image runat="server" ImageUrl="~/App_Themes/_default/images/page_flip.png" BorderWidth="0" />
+                    <span class="msg_block"></span>
+                </asp:HyperLink>
+
+            </div>
+
+            <!-- Left Nav -->
+            <oegen:LeftNav ID="ctrlLeftNav" runat="server" />
+
+            <div id="wrap">
+                   <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>     
+                   
+                          
+            </div>
+
+        </div>
+
+    </div>
+
+    <div id="message"><a href="#top">Scroll to top</a></div>
+  
+    <!-- jQuery was here -->  
+    <!-- scripts concatenated and minified via ant build script-->
+    <asp:PlaceHolder runat="server" ID="plcBindingFix">
+    <script type="text/javascript" src="<%# ResolveUrl("~/js/plugins.js")%>"></script>
+    <script type="text/javascript" src="<%# ResolveUrl("~/js/script.js")%>"></script>
+    <script type="text/javascript" src="<%# ResolveUrl("~/js/easing.js")%>"></script>
+    <script type="text/javascript" src="<%# ResolveUrl("~/js/pageflip.js")%>"></script>
+    <script type="text/javascript" src="<%# ResolveUrl("~/js/jquery.ui.core.js")%>"></script>
+    <script type="text/javascript" src="<%# ResolveUrl("~/js/jquery.ui.widget.js")%>"></script>
+    <script type="text/javascript" src="<%# ResolveUrl("~/js/jquery.ui.tabs.js")%>"></script>
+    <script type="text/javascript" src="<%# ResolveUrl("~/js/jquery.ui.accordion.js")%>"></script>
+    <script type="text/javascript" src="<%# ResolveUrl("~/js/jquery.ui.datepicker.js")%>"></script>
+    <script type="text/javascript" src="<%# ResolveUrl("~/js/jquery.tipTip.js")%>"></script> 
+    <script type="text/javascript" src="<%# ResolveUrl("~/js/load_content.js")%>"></script>
+    </asp:PlaceHolder>
+
+     <script type="text/javascript">
+        $(function () {
+            $("li:first-child").addClass("first-item");
+        });
+    </script> 
+
+    <script type="text/javascript">
+        $(function () {
+            $("ul li:last-child").addClass("last-item");
+        });
+    </script>   
+  
+    <script type="text/javascript">
+        $(function () {
+            $("ul:last-child").addClass("last-ul");
+        });
+    </script>
+
+     <script type="text/javascript">
+         $(function () {
+             $("li:last-child").addClass("last-item");
+         });
+    </script> 
+
+   <!-- date picker contructor was here -->
+
+    <!-- accordion was here -->
+    
+    <!-- tab js was here -->
+
+
+
+    <!-- ADVANCED SEARCH panel slide down/reveal-->
+	
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            // Expand Panel
+            $("#search-open").click(function () {
+                $("div#search-panel").slideDown("slow");
+            });
+
+            // Collapse Panel
+            $("#search-close").click(function () {
+                $("div#search-panel").slideUp("slow");
+            });
+
+            // Switch buttons from "Log In | Register" to "Close Panel" on click
+            $("#search-toggle a").click(function () {
+                $("#search-toggle a").toggle();
+            });
+
+        });
+    </script>
+
+	<!-- description panel slide down/reveal-->
+	
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            // Expand Panel
+            $("#open").click(function () {
+                $("div#description-panel").slideDown("slow");
+            });
+
+            // Collapse Panel
+            $("#close").click(function () {
+                $("div#description-panel").slideUp("slow");
+            });
+
+            // Switch buttons from "Log In | Register" to "Close Panel" on click
+            $("#toggle a").click(function () {
+                $("#toggle a").toggle();
+            });
+
+        });
+    </script>
+
+    <!-- Tool tip-->
+    <script type="text/javascript">
+        $(function () {
+            $(".someClass").tipTip();
+        });
+    </script>  
+
+    <!-- toggles the secondary menu off when closing nav panel --> 
+    <script type="text/javascript">
+
+        $("a#controlbtn").click(function () {
+            $("#control-panel").toggle("fast");
+        });    
+        
+    </script>
+    
+    <!-- slide secondary nav panel -->
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            $("a#controlbtn").click(function (e) {
+
+                e.preventDefault();
+
+                var slidepx = $("#secondary-nav").width() + 10;
+
+                if (!$("div#maincontent").is(':animated')) {
+
+                    if (parseInt($("div#maincontent").css('marginLeft'), 10) < slidepx) {
+
+                        $(this).removeClass('close').html('&nbsp;');
+
+                        margin = "+=" + slidepx;
+
+                    } else {
+
+                        $(this).addClass('close').html('&nbsp;');
+
+                        margin = "-=" + slidepx;
+                    }
+
+                    $("div#maincontent").animate({
+                        marginLeft: margin
+                    }, {
+                        duration: 'slow',
+                        easing: 'easeOutQuint'
+                    });
+
+                }
+            });
+
+        });
+    </script>
+
+
+
+    <!-- scroll to top btn-->
+    <script type="text/javascript">
+        $(function () {
+            var scroll_timer;
+            var displayed = false;
+            var $message = $('#message a');
+            var $window = $(window);
+            var top = $(document.body).children(0).position().top;
+
+            $window.scroll(function () {
+                window.clearTimeout(scroll_timer);
+
+                scroll_timer = window.setTimeout(function () {
+                    if ($window.scrollTop() <= top) {
+                        displayed = false;
+                        $message.fadeOut(500);
+                    }
+                    else if (displayed == false) {
+                        displayed = true;
+                        $message.show().click(function () { $message.fadeOut(5000); });
+                        $message.fadeOut(5000);
+                        displayed = false;
+                        // $message.stop(true, true).show().click(function () { $message.fadeOut(500); });
+                    }
+                }, 100);
+            });
+        });
+    </script> 
+
+
+
+    <!-- end concatenated and minified scripts-->
+  
+      <!--[if lt IE 7 ]>
+        <script src="js/libs/dd_belatedpng.js"></script>
+        <script> DD_belatedPNG.fix('img, .png_bg'); </script>
+      <![endif]-->
+
+      <!-- change the UA-XXXXX-X to be your site's ID -->
+  
+    </form>
+
+</body>
+
+</html>

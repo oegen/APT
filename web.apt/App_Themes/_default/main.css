@@ -1,0 +1,1031 @@
+/*- EXTERNAL STYLESHEETS
+----------------------------------------------------------------------------- */
+
+@import url("reset.css");
+@import url("print.css") print;
+
+/*- BASE STYLES 
+----------------------------------------------------------------------------- */
+
+body { font:13px/1.231 MuseoSlab500, tahoma, sans-serif; color:#424345; *font-size:small; background:#424345; margin:0 0 20px 0; padding: 0}
+
+select, input, textarea, button { font:99% sans-serif; }
+
+body, select, input, textarea {  color: #444}
+h1,h2,h3,h4,h5,h6 { font-weight: normal; }
+html { overflow-y: scroll; }
+
+a:hover, a:active { outline: none; }
+a, a:active { color: #607890; text-decoration:none }
+a:hover { color: #036; }
+
+ul, ol { margin-left: 1.8em; }
+ol { list-style-type: decimal; }
+
+nav ul, nav li { margin: 0; } 
+small { font-size: 85%; }
+strong, th, b { font-weight: bold; }
+td, td img { vertical-align: top; } 
+textarea { overflow: auto; } 
+.ie6 legend, .ie7 legend { margin-left: -7px; } 
+input[type="radio"] { vertical-align: text-bottom; }
+input[type="checkbox"] { vertical-align: bottom; }
+.ie7 input[type="checkbox"] { vertical-align: baseline; }
+.ie6 input { vertical-align: text-bottom; }
+label, input[type=button], input[type=submit], button { cursor: pointer; }
+button, input, select, textarea { margin: 0; }
+
+    /* optional vanity styles */
+::-moz-selection{ background: #927ca0; color:#fff; text-shadow: none; }
+::selection { background:#927ca0; color:#fff; text-shadow: none; } 
+a:link { -webkit-tap-highlight-color: #FF5E99; } 
+
+button {  width: auto; overflow: visible; }
+.ie7 img { -ms-interpolation-mode: bicubic; }
+
+
+/* NON-SEMANTIC HELPER CLASSES
+-------------------------------------------------------------------------- */
+
+.ir { display: block; text-indent: -999em; overflow: hidden; background-repeat: no-repeat; text-align: left; direction: ltr; }
+.hidden { display: none; visibility: hidden; } 
+.visuallyhidden { position: absolute !important; clip: rect(1px 1px 1px 1px);  clip: rect(1px, 1px, 1px, 1px); }
+.invisible { visibility: hidden; }
+
+/* self-clear floats */
+.group:before, .group:after {  content: "\0020"; display: block; height: 0; visibility: hidden;	 } 
+.group:after { clear: both; }
+.group { zoom: 1; }
+
+
+ /*- MUSEO SANS FONT
+ -------------------------------------------------------------------------- */
+
+@font-face {
+	font-family: 'MuseoSans500';
+	src: url('MuseoSans_500-webfont.eot'); /* IE9 Compat Modes */
+	src: url('MuseoSans_500-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+	     url('MuseoSans_500-webfont.woff') format('woff'), /* Modern Browsers */
+	     url('MuseoSans_500-webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+	     url('MuseoSans_500-webfont.svg#webfontkQkWxTED') format('svg'); /* Legacy iOS */
+	}
+
+ /*- MUSEO SLAB FONT
+ -------------------------------------------------------------------------- */
+
+@font-face {
+	font-family: 'MuseoSlab500';
+	src: url('Museo_Slab_500-webfont.eot'); /* IE9 Compat Modes */
+	src: url('Museo_Slab_500-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+	     url('Museo_Slab_500-webfont.woff') format('woff'), /* Modern Browsers */
+	     url('Museo_Slab_500-webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+	     url('Museo_Slab_500-webfont.svg#webfontyumMOUTD') format('svg'); /* Legacy iOS */
+	}
+	
+ /*- TYPOGRAPHY
+ -------------------------------------------------------------------------- */
+#content h1 { font-size:2.6em; font-weight: normal; letter-spacing:-0.04em; margin-left:2%; padding-bottom:0px; min-width:98%; padding-top:5px}
+#content h1 .colorit {color:#f1b01e; font-size:0.6em}
+#content h2 { font-size:1.8em; font-weight: normal; letter-spacing:-0.02em;  padding:0 0 12px 0;}
+#content .title h2 {margin-bottom:-13px !important; color:#f1b01e; font-size:1.4em; margin-top:0px; margin-left:2%}
+#content .colortxt {color:#f1b01e; letter-spacing:0em}
+#content p {margin-left:2%}
+.colorit {color:#f1b01e; font-size:0.8em}
+
+/*- MAIN TITLES AT TOP OF EVERY PAGE & DESCRIPTION PANEL
+ -------------------------------------------------------------------------- */
+#content .title { width:100%; background:#fff url('images/content-grad.png') top left repeat-y; padding:20px 0}
+#content .title .title-nav {width:100%; margin-bottom:10px}
+#content .title .ie7 .title-nav {min-width:100%; margin-bottom:10px}
+#description-panel {width: 100%; color: #999999; background: #fff url('images/content-grad.png') left top repeat-y;overflow: hidden;position: relative; z-index: 3; display: none;}
+#description-panel h3 {margin-left:2%; color:#f1b01e; font-size:1.2em}
+#description-panel p {margin-bottom:20px; padding-right:2%}
+.title a {color:#f1b01e}
+.title a:hover {color:#424345}
+.title .open-message {background: url('images/arra-down.png') right no-repeat; padding-right:10px; }
+.title .close-message {background: url('images/arra-up.png') right no-repeat; padding-right:10px; }
+
+/*- CONTAINER & CONTENT PANEL
+ -------------------------------------------------------------------------- */
+#container {margin:0px auto 0 auto;  width:1210px; height:100%; background: url('images/molson-coors-logo.gif') bottom left no-repeat}
+#molson-coors-logo {margin:20px auto 0 auto;  width:1210px; height:100%; background:#fff url('images/container_grad.png') top left repeat-y}
+div#maincontent {position: relative; margin-left: 154px; height:100%; z-index:100; background:#ecede6}
+.ie7 div#maincontent { width:auto; float:left}
+.menu-closed {margin-left:20px !important}/*- closes the secondary meny when not needed for the page - */
+div#wrap {position: relative; height:100%; overflow:hidden; }
+#content {width:100%; height:100%; min-height:600px; background: url('images/content-grad.png') top left repeat-y}
+#section-wrap {float:left; width:100%}
+
+/*- TITLES FOR PAGES AND INFO BUTTON (info button for the forms that has tooltips)
+ -------------------------------------------------------------------------- */
+#form-title-wrap { display:block; width:100%; float:left; margin-top:6px}
+.form-title {float:left; width:90%}
+.form-info-btn {float:right; padding-right:12px}
+.tabs-titles {font-size:0.9em}
+.tabs-titles #form-title-wrap {margin-top:25px}
+.ie7 .tabs-titles #form-title-wrap {margin-top:0px}
+
+/*- PRIMARY PANEL
+ -------------------------------------------------------------------------- */
+#primary-nav {width:175px; float:left; position:relative; z-index:1000}
+ul.primary-nav { list-style-type:none; float:left; width:172px; margin:7px 0 0 0; padding:0; position:relative; z-index:2000}
+ul.primary-nav li { width:172px; float:left; background: url('images/primary-nav-line.gif') bottom center no-repeat; padding-bottom:1px}
+.ie7 ul.primary-nav li { width:171px}
+ul.primary-nav li a { font-size:1.2em; color:#424345; min-width:90%; display:block; padding:15px 5%; background-image: url('images/system-icons.png'); background-repeat:no-repeat}
+ul.primary-nav li a:hover {background-color:#f6f6f3}
+ul.primary-nav li.view-projects a {background-position:136px -500px}
+ul.primary-nav li.view-tasks a {background-position:136px -548px}
+ul.primary-nav li.reports a {background-position:136px -596px}
+ul.primary-nav li.admin a {background-position:136px -648px}
+ul.primary-nav li.calendar a {background-position:136px -695px}
+ul.primary-nav li.time-sheet a {background-position:136px -745px}
+ul.primary-nav li.view-projects-selected a {background-position:136px -814px; background-color:#f1b01e; color:#fff}
+ul.primary-nav li.view-tasks-selected a {background-position:136px -882px; background-color:#f1b01e; color:#fff}
+ul.primary-nav li.reports-selected a {background-position:136px -950px; background-color:#f1b01e; color:#fff}
+ul.primary-nav li.admin-selected a {background-position:136px -1002px; background-color:#f1b01e; color:#fff}
+ul.primary-nav li.calendar-selected a {background-position:136px -1050px; background-color:#f1b01e; color:#fff}
+ul.primary-nav li.time-sheet-selected a {background-position:136px -1099px; background-color:#f1b01e; color:#fff}
+
+.nav-grad { position: relative; overflow: hidden; height:100%; float:left; width:10px; background: url('images/nav-grad.png') top right repeat-y}
+.apt-logo {margin:-27px 0 -8px -25px}
+
+
+/*- SECONDARY PANEL
+ -------------------------------------------------------------------------- */
+a#controlbtn{color:#333; text-decoration:none; display:inline-block; width:132px; cursor:pointer}
+a#controlbtn.open {background: transparent url(images/toggle_minus.png) no-repeat right center}
+a#controlbtn.close {background: transparent url(images/toggle_plus.png) no-repeat right center}
+#secondary-nav {float:left; width:124px; margin-left:-134px; padding:10px 0px 0 0px; height:100%;}
+ul#secondary-nav-items {list-style:none; margin:18px 0px 0px 0px; padding:0px; width:143px; margin-left:-22px}
+ul#secondary-nav-items li { margin:0 0 0px 0}
+ul#secondary-nav-items li a {color:#fff; width:100%; display:block; font-size:0.9em; padding:10px 0px 10px 6px}
+ul#secondary-nav-items li a:hover {color:#424345}
+ul#secondary-nav-items li.selected a {background: url('images/control-panel-arra.gif') right no-repeat; color:#424345; }
+#control-panel {float:left;}
+#control-panel h2, h3 {color:#f9dfa5; margin-left:-14px; line-height:1.1em; letter-spacing:-0.05em}
+#control-panel h2 { font-size:2em; padding-top:9px}
+#control-panel h3 { font-size:1.4em; background: url('images/secondaynav-title-arra.png') bottom left no-repeat; padding-top:1px; padding-bottom:14px}
+
+
+/* TABS
+--------------------------------------------------------------------------- */
+  /* html { -webkit-text-size-adjust:none; -ms-text-size-adjust:none; } */
+
+    /*
+ * jQuery UI Tabs 1.8.8
+ *
+ * Copyright 2010, AUTHORS.txt (http://jqueryui.com/about)
+ * Dual licensed under the MIT or GPL Version 2 licenses.
+ * http://jquery.org/license
+ *
+ * http://docs.jquery.com/UI/Tabs#theming
+ */
+.ui-tabs { position: relative; padding: 0em; zoom: 1; font-size: 1.2em; } /* position: relative prevents IE scroll bug (element with position: relative inside container with overflow: auto appear as "fixed") */
+.ui-tabs .ui-tabs-nav { margin:0 0 0 0px; padding:0; background:#9ea08c url('images/content-grad.png') left repeat-y; min-width:100%}
+.ui-tabs .ui-tabs-nav li { list-style: none; float: left; position: relative; top: 0px; margin: 0 .6em 1px 0px; border-bottom: 0 !important; padding: 0; white-space: nowrap; }
+.ui-tabs .ui-tabs-nav li a { float: left; padding: .3em 0.6em; text-decoration: none; color:#fff}
+.ui-tabs .ui-tabs-nav li.first-item {margin: 0 .6em 1px 10px} /* revert back once testing is done */
+.ui-tabs .ui-tabs-nav li.ui-tabs-selected { margin-bottom: 0; padding-bottom: 1px; }
+.ui-tabs .ui-tabs-nav li.ui-tabs-selected a, .ui-tabs .ui-tabs-nav li.ui-state-disabled a, .ui-tabs .ui-tabs-nav li.ui-state-processing a { cursor: text; }
+.ui-tabs .ui-tabs-nav li a, .ui-tabs .ui-tabs-collapsible .ui-tabs-nav li.ui-tabs-selected a { cursor: pointer;} /* first selector in group seems obsolete, but required to overcome bug in Opera applying cursor: text overall if defined elsewhere... */
+.ui-tabs .ui-tabs-nav li.ui-tabs-selected a {color:#424345}
+.ui-tabs .ui-tabs-panel { display: block; border-width: 0; padding: 0.3em 0em;  float:left; width:100%}
+.ui-tabs .ui-tabs-hide { display: none !important; }
+.ui-widget-content a {color:#fff; font-size:90%; display:inline-block}
+.ui-tabs p { text-align:left}
+.ui-tabs .ui-state-default {background:#9ea08c; border-top:#9ea08c 3px solid}
+.ui-tabs .ui-tabs-panel { display: block; border-width: 0; padding: 0.3em 0em;  float:left; width:100%}
+
+ /* Tab states  */
+.ui-tabs .ui-state-active {background :#ecede6; border-top:#f1b01e 3px solid !important;}
+.ui-tabs .ui-tabs-nav li a:hover {color:#000}
+.ui-tabs .ui-tabs-nav li {border-top:#9ea08c 3px solid}
+#tab-nav-wrap { display:block; float:left; min-width:100%; margin-bottom:-20px}
+.ie7 #tab-nav-wrap {margin-bottom:0}
+.tabswrap {min-height:600px; display:block; font-size:0.8em; padding-bottom:20px /*- font size made smaller for project list - .ui-tabs made the text larger 1.2em */}
+#tabs {min-height:600px; font-size: 1.2em}
+
+/* ACCORDIAN
+--------------------------------------------------------------------------- */
+#accordion { background:#fff; border:1px solid #dadbd7; width:69%; float:left; margin:0; text-align:left; padding:0 0%; -webkit-border-radius: 5px;
+border-radius: 5px;}
+.ie7 #accordion {width:67%}
+#accordion h3 a {color:#424345; font-size:1.4em; padding:8px 0px 8px 12px}
+#accordion .ui-accordion-header {border-bottom:1px solid #e8e8e9; padding:10px 0; margin:0 10px}
+#accordion h3.ui-state-default { background: url('images/accordian-arra-default.gif') left no-repeat}
+#accordion h3.ui-state-default a:hover { color:#f1b01e; background: url('images/accordian-arra-default-hover.gif') left no-repeat}
+#accordion h3.ui-state-active { background: url('images/accordian-arra-active.gif') left no-repeat}
+#accordion h3.ui-state-active a:hover { color:#f1b01e; background:none}
+#accordion h3.ui-state-active {border-top:0px !important}
+#accordion h3.ui-state-default {border-top:0px !important}
+.ui-accordion-content {height:auto !important}
+
+
+/*- VIEW PROJECTS TABS STYLES
+ -------------------------------------------------------------------------- */
+#tabs-inner {float:left; width:98%; padding:10px 0; font-size:1.2em /*- font size made larger to compensate for project list - */; margin-left:2%}
+#tabs-inner .tasks {font-size:0.9em }
+.your-tasks {font-size:1em !important}
+#gen-inner {margin-left:2%; width:98%; float:left}
+
+/*- FILTER NAV
+ -------------------------------------------------------------------------- */
+#filter-projects {float:left; min-width:100%; margin:-1px 0 10px 0}
+#filter-projects ul { min-width:98%; background: #9ea08c url('images/content-grad.png') left repeat-y; padding:5px 0 5px 2%; }
+#filter-projects ul li { display:inline}
+#filter-projects ul li fieldset {margin-bottom: 10px}
+#filter-projects ul li legend {padding: 20px 2px 10px 2px; font-size:1.2em; font-family:MuseoSlab500; color:#f1b01e; min-width:100% !important}
+#filter-projects ul li label { display: inline-block;line-height: 1.8;vertical-align: top; min-width: 0%; /* Width of labels */ padding-right:10px}
+#filter-projects ul li select {border: 1px solid #dadada !important; background: #f0f1ed !important; padding:2px; margin-right:5px; font-family:MuseoSlab500; width:160px}
+#filter-projects ul li input[type="text"], input[type="url"], input[type="email"], input[type="tel"], input[type="textarea"], textarea {margin: 2px 5px 2px 0; padding: 2px; border: 1px solid #dadada !important; background: #f0f1ed !important;font-family:MuseoSlab500}
+#filter-projects ul li .filter-titles { font-size:0.9em; color:#fff; text-transform:uppercase; display:inline-block; padding:0px 10px 0px 0px; margin-top:5px}
+#filter-projects ul li a.input_btn {color:#fff; font-size: 0.8em; background:#424345; border: 0px solid; border-color: #424345; font-family:MuseoSans500; padding:5px 8px; margin-right:10px; text-transform:uppercase; text-align:center !important}
+.ie7 #filter-projects ul li a.input_btn {padding:5px 8px 3px 8px}
+#filter-projects ul li .input_btn:hover {background:#f1b01e}
+#filter-projects ul li input[type="text"].datepicker {width:80px}
+
+/*- RIGHT NAV on TABS PAGES -- */
+#right-nav {background:#acae9f; width:29%; float:right; margin-right:7px; padding-bottom:5px; -webkit-border-radius: 5px; border-radius: 5px;}
+.ie7 #right-nav {margin-right:14px; padding-bottom:0px}
+#right-nav h2 {color:#fff !important; padding:16px 0 10px 2%; font-size:1.2em; letter-spacing:0em}
+#right-nav .right-nav-inner {width:95%; margin-bottom:10px}
+#right-nav .right-nav-inner ul {width:100%; margin:0 auto 20px auto}
+#right-nav .right-nav-inner ul li { border-top:1px solid #caccc0}
+#right-nav .right-nav-inner ul li a {padding:10px 3%; min-width:94%; font-family:MuseoSans500}
+#right-nav .right-nav-inner ul li a:hover { background:#9fa193; color:#fff }
+#right-nav .right-nav-inner ul li.selected a { background-color:#f1b01e; }
+#right-nav .right-nav-inner ul li.stop a { color:#cccdc4; background-image: url('images/system-icons.png'); background-position: 210px -1540px; background-repeat:no-repeat}
+#right-nav .right-nav-inner ul li.stop a:hover {background:#acae9f; background-image: url('images/system-icons.png'); background-position: 210px -1540px; background-repeat:no-repeat}
+#right-nav .input_btn { color:#fff;  width:100%; margin:10px auto 0px auto; font-size: 0.9em; background:#4e4e4e; border: 0px solid; border-color: #dadada; font-family:MuseoSans500; padding:10px 0px; text-align:center;} 
+#right-nav .input_btn:hover {background: #000;}
+
+
+/*----------------------------------------------------------------------------
+
+ FORMS FORMS FORMS FORMS FORMS FORMS FORMS FORMS FORMS
+
+ -------------------------------------------------------------------------- */
+.aptform {font-family:MuseoSans500; width:98%; display:block; text-align:left; padding:10px 1.5%; margin:0 0%; border-bottom:1px solid #e8e8e9; height:auto !important; overflow:hidden; font-size:0.9em}
+.aptform fieldset {display:block; clear:both}
+.aptform legend {padding: 10px 2px 5px 2px; font-size:1.6em; font-family:MuseoSlab500; color:#f1b01e; border-top:0px dotted #f1b01e; display:block; width:100%; float:left}
+.aptform label { display: inline-block;line-height: 1.8;vertical-align: top; padding:5px 0}
+.aptform select {width:64%;	border: 1px solid #dadada !important; background: #f0f1ed !important; padding:3px; margin-top:5px}
+.aptform fieldset ol {margin:0 0 10px 0; padding:0; min-width:100%}
+.aptform fieldset li {list-style: none; padding: 5px; margin: 0}
+.aptform fieldset li.error { border:1px solid #fcccc2; margin-bottom:4px; background:#feece8}
+.aptform fieldset fieldset { border: none; margin: 3px 0 0}
+.aptform fieldset ol li fieldset legend {padding: 5px 0 5px 0; font-weight: normal; font-family:MuseoSans500; font-size:1em; color:#424345}
+.aptform fieldset fieldset label {display: block; width: auto;}
+.aptform em {font-weight: bold; font-style: normal; color: #f00;}
+.aptform label { min-width: 34%; /* Width of labels */}
+.aptform fieldset fieldset label {margin-left: 39%; /* Width plus 3 (html space) */}
+.aptform fieldset fieldset {width:90%;}
+select, input, textarea, button {font: 99% MuseoSans500;}
+.aptform input[type="text"], .aptform input[type="url"], .aptform input[type="email"], .aptform input[type="tel"], .aptform input[type="textarea"], .aptform textarea {margin: 3px 0 0 0; padding: 6px; width: 62% !important; border: 1px solid #dadada !important; background: #f0f1ed !important;}
+.aptform fieldset li.error input[type="text"], input[type="url"], input[type="email"], input[type="tel"], input[type="textarea"], textarea { background:#fff}
+.aptform em {color:#f1b01e; font-weight:normal}
+.aptform .input_btn { color:#fff; font-size: 1em; background:#f1b01e; border: 0px solid; border-color: #dadada; font-family:MuseoSans500; padding:5px 10px} 
+.aptform .input_btn:hover {color: #4e4e4e} 
+.aptform input[type="checkbox"] {vertical-align:middle}
+.aptform h3 {margin:0; padding:0 0 10px 0; color:#424345; font-size:1.4em; font-family:MuseoSlab500;}
+
+/*- styles for reporting forms- */
+.reports-RBtns label { vertical-align:baseline; padding-right:1em}
+.reports-RBtns input[type="radio"] {margin-right:.75em}
+
+.submit_btn input[type=button], .submit_btn input[type=submit], .submit_btn button 
+{ 
+  float:left; 
+  background:none; 
+  border:0; 
+  color:#fff; 
+  height: 40px;
+  background: url(images/btn_stretch.png) repeat-x left top;
+  line-height: 40px;
+  padding: 0 10px;
+  font-family: MuseoSlab500;
+  font-size: 1em;
+  text-decoration: none;
+  }
+
+fieldset.reporting legend { margin-top:.75em}
+  
+/*- STYLES FOR GENERIC FORM (IE THE NEW PROJECT BRIEF)
+ -------------------------------------------------------------------------- */
+/* wraps for generic forms within any section  */
+hr {margin-top:0px}
+.ie7 hr {margin-top:-8px; margin-bottom:6px}
+.form-white-box {font-size:1.2em; margin: 10px 2% 30px 2% !important; border: #DADBD7 1px solid; padding: 8px 1%; background: white; display:block !important; float:left} /* white box with border project brief sits within  */
+.form-white-box .aptform {border-bottom:0}
+/* generic form styles - not needed for other forms  */
+.gen-form {float:left; background:none; width:100%; border:0; padding:0 0 20px 0; margin:0} /* this does away with white background, border, padding, margin of form-wrap  */
+.gen-form label {min-width: 20%; font-size:1.2em}  /* resets width of label  */
+.gen-form legend {padding: 5px 2px 0px 0px}
+.gen-form fieldset ol {min-width:98%; float:left}
+.gen-form fieldset li {list-style: none; padding: 5px 5px 5px 0; margin: 0; border-bottom:#d4d6cb dotted 0px}
+.gen-form fieldset li.last-item {border-bottom:0; margin-bottom:20px}
+.gen-form input[type="text"], .gen-form input[type="url"], .gen-form input[type="email"], .gen-form input[type="tel"], .gen-form input[type="textarea"], .gen-form textarea { margin: 3px 0 0 0; padding: 6px; width: 36% !important; border: 1px solid #cdcec2 !important; background: white !important}
+.gen-form select { width: 31.5%; border: 1px solid #cdcec2 !important; background: white !important; padding: 6px !important;}
+.gen-form fieldset fieldset {width: 52.5%; padding-top:10px}
+.gen-form fieldset fieldset label {margin-left:0 !important}
+.gen-form span input[type="radio"], .gen-form span label {padding:0; margin:0;  display:inline}
+#tabs .gen-form {font-size:0.75em} /* This was needed to set the text size of the generic forms within the tabs area  */
+.gen-form li span {display:inline-block; margin-top:8px}
+.gen-form li table span {margin-top:0px}
+
+/* upload file styles */
+.upload-file { margin-top:20px}
+.upload-file input[type="text"], .upload-file input[type="url"], .upload-file input[type="email"], .upload-file input[type="tel"], .upload-file input[type="textarea"], .upload-file textarea { width:auto !important}
+.upload-file input[type="checkbox"] {margin-bottom:10px; vertical-align:bottom; display:inline-block; margin-right:10px}
+.upload-file ul li { display:block !important}
+.upload-file .upload_btn {font:normal 11px/10px "Segoe UI", Arial, sans-serif; padding:5px 20px; margin-top:10px; color:#000}
+.upload-file .RadUpload_Vista .ruRemove { margin-top:10px !important; padding-left:20px !important}
+.RadUpload, .RadUploadProgressArea, .gen-form .upload-file li span { width:auto !important}
+.RadUpload .ruFileInput, .RadUpload .ruFakeInput, .RadUpload .ruButton, .RadUploadProgressArea .ruButton { vertical-align:middle !important}
+
+/* Dashboard styles */
+.dashboard table { background:#fff; border:0; margin:0px 0px 20px 0px; width:98%; float:left}
+.dashboard table th, td, caption {border:0;  background:#fff; color:#444 ; text-align:left; padding:10px; }
+.dashboard table caption {color:#424345; font-size:0.9em; text-transform:uppercase; font-family:MuseoSlab500; background:#d1d2c7; padding-top:5px; padding-bottom:5px}
+.dashboard table tr td {border-bottom:1px dotted #dadada }
+.dashboard table tr td.detail {color:#f1b01e; width:50%}
+.dashboard table td { font-size:0.9em}
+.dashboard table tr td.last-item {border:none !important}
+.dashboard table tr th { background:#444; color:#fff; padding-top:5px; padding-bottom:5px; font-weight:normal; font-size:0.9em }
+
+/* Document Tab styles */
+.document-browse {margin:20px 0 10px 0; min-width:100%; display:block}
+
+/* styles for wider labels - Premium Element Details page */
+.generic-alt-list label { margin-left:0; min-width:40%; padding-top:5px }
+.generic-alt-list li table label {width:10%; margin:0; padding:0}
+.generic-alt-list table {margin:0; padding:0; float:none !important; width:auto !important}
+.generic-alt-list table tr td {padding:0 !important; margin:0}
+.gen-form .widebtn {margin-left:40%}
+
+/* Radio buttons styles */
+table.radio-table, table.radio-table tr td { background:none; border:0px solid red; padding:0px; margin-left:180px }
+table.radio-table tr td label {padding-left:10px}
+table.radio-table-alt, table.radio-table-alt tr td { background:none !important; border:0px !important; padding:0px !important; margin-left:0px; margin-bottom:0 !important; float:left; }
+table.radio-table-alt {margin-top:-5px !important;}
+table.radio-table-alt tr td label {padding-left:0; display:inline}
+table.radio-table-alt input[type="radio"] { display:inline; padding-left:0; margin-top:6px}
+.radio-label { display:inline !important}
+.aptform fieldset li table.radio-table {border:none}
+.aptform fieldset li table.radio-table td {border:none; padding:0}
+
+/* ADMIN styles */
+.ldap-search {display:block}
+.ldap-search .search {display:inline-block; font-size:1.1em; min-width:20%;}
+
+
+/* NEW PROJECT BRIEF styles - not needed for generic form!!!!!!  */
+.new-brief-wrap { display:block; min-width:100%; float:left} /* Not sure this is used */
+.ie7 .new-brief { display:block; padding-bottom:30px}
+.col1 { float:left;}
+.colFull {float:left; width:100%; padding:0 0 0 0 ; text-align:left}
+ul.new-brief  { list-style-type:none; min-width:95%; margin:10px 0 0 0; padding:0}
+ul.new-brief li { display:block; min-width:100%; float:left; padding:0 0 10px 0 }
+ul.new-brief li fieldset { float:left}
+ul.new-brief li label { min-width:20%; display:inline-block /* Width of labels */}
+.brief-txt-box input[type="text"] { width:30% !important}
+ul.new-brief li input[type="checkbox"] {vertical-align:middle; margin-top:10px; margin-right:5px}
+.ie7 ul.new-brief li input[type="checkbox"] {margin-top:8px}
+.welcome { float:left; width:70%; margin-top:20px}
+.welcome h2 {color:#f1b01e; margin:20px 0 0 20px;}
+.welcome p { font-size:1.2em; padding-left:10px; padding-bottom:15px}
+.oneteam {float:right; margin:20px 15px 0 0}
+
+
+/* Image Slider - USED ON NEW PROJECT BRIEF PAGE FOR THE BIG GRAPHIC  */
+#horiz_container_outer {width:96%; overflow-x:hidden; overflow-y:hidden; position:relative; height:411px; margin:0 auto 5px auto; border:1px solid #cccccc; padding:0px}
+#horiz_container { width:1928px; margin:-16px 0 0 0px; padding:0px; height:411px }
+.ie7 #horiz_container {margin:0px}
+#horiz_container ul {margin:0px; padding:0px; float:left}
+#horiz_container_inner {padding:0px; padding-left:0px;}
+#horiz_container li {list-style:none; display: inline-table; margin:0px; padding:0px; float:left}
+#horiz_container li img {padding:0px; margin:0px; float:left;}
+#scrollbar { position:relative; width:966px; height:12px; display:block; font-size:1px; top:0px; margin:0px auto}
+#track { position:absolute; left:0px; top:0; width:966px; height:12px; background: #676767; -webkit-border-radius: 15px; -moz-border-radius: 15px; border-radius: 15px;}
+#dragBar { position:absolute; left:0px; top:0px; width:20px; height:10px; -webkit-border-radius: 10px; -moz-border-radius: 10px; border-radius: 10px;
+background-image: -webkit-gradient( linear, left bottom, left top, color-stop(0.39, rgb(229,229,229)), color-stop(0.7, rgb(245,245,245)) );
+background-image: -moz-linear-gradient( center bottom, rgb(229,229,229) 39%, rgb(245,245,245) 70%);}  
+.ie7 #dragBar, .ie8 #dragBar  { background-color:#e5e5e5}
+#left_scroll { position:absolute;  border-color: transparent gray transparent transparent; border-style: solid; border-width: 5px; width: 0; height: 0px; cursor:pointer; top:1px; left:-15px;}  
+#right_scroll { position:absolute; right:-15px; top:1px; border-color: transparent transparent transparent gray; border-style: solid; border-width: 5px; width: 0; height: 0px; cursor:pointer}
+
+/* Prevent selection problem */
+#scrollbar, #track, #dragBar, #left, #right {-moz-user-select: none; -khtml-user-select: none}
+
+
+/* LIST BOX STYLES - User Manager page */
+.user-roles-wrap {float:left; }
+.gen-form select.user-roles-listbox {width:370px !important; font-size:1.1em}
+.user-roles {border:1px solid #f1b01e; padding:10px; float:left; background:white; margin-right:20px; width:370px;}
+.addKeywords {width:370px; float:left; background:#f1b01e; color:#fff; border:1px solid #f1b01e; font-size:1em; text-transform:uppercase; padding:8px 10px; margin-right:20px}
+.addKeywords span {float:right; margin-top:0px}
+.ie7 .addKeywords span {margin-top:-16px}
+.user-roles-btns {float:left}
+
+
+/* KIT ELEMENTS STYLES */
+.kit-contents {width:98%;  display:block; float:left; margin-bottom:20px; padding:0}
+.ie7 .kit-contents {min-width:98%}
+#kit-contents-wrap table {width:100% !important; margin:0 !important; border:0 !important}
+#kit-contents-wrap table tr th { background:#9ea08c !important; font-weight:normal}
+#kit-contents-wrap table tr th.no-border {border:0}
+#kit-contents-wrap table tr td {padding-bottom:0 !important}
+#kit-contents-wrap table tr td label {padding-top:0px !important; font-size:1em}
+#kit-contents-wrap table input {width:40px; padding:4px; margin-bottom:10px}
+#kit-contents-wrap .elements-contents table tr td label {padding-top:4px !important; font-size:1em}
+#kit-contents-wrap caption {text-align:left; padding: 10px 0% 5px 1%; font-family:MuseoSlab500; color:#f1b01e;  background:#424345; text-transform:uppercase; font-size:1em}
+#kit-contents-wrap .elements-contents caption { text-align:left; background:#f1b01e; font-size:1em; color:#424345; padding:10px 0% 5px 3%; width:97%;}
+.ie7 #kit-contents-wrap .elements-contents caption {min-width:90%}
+.elements-contents {width:31.345%; display:block; float:left; margin-right:2%; border:1px solid #c3c4b8}
+.ie7 .elements-contents {min-width:31.345%}
+.last-column {margin-right:0%}
+.kit-column-scroller {  height:250px; overflow-y:scroll; overflow-x:hidden; width:100%; border:1px solid #c3c4b8; padding-bottom:20px; background:#fff;}
+#kit-contents-group {float:left; width:100%; margin:0px 0 50px 0}
+
+
+/*-- LOGIN FORMS 
+ -------------------------------------------------------------------------- */
+.login-form label { display: inline-block; line-height: 1.8; vertical-align: top; min-width: 20%; /* Width of labels */}
+.login-form em {color:#f1b01e; font-weight:normal}
+.login-form ol {margin:15px 0 0 0; padding:0; min-width:100%; list-style-type:none !important}
+.login-form li {list-style: none; padding: 5px; margin: 0}
+.login-form input[type="text"], .login-form input[type="url"], .login-form input[type="email"], .login-form input[type="tel"], .login-form input[type="textarea"], .login-form input[type="password"], textarea { margin: 3px 0 0 0; padding: 6px; width: 50%; border: 1px solid #dadada !important; background: #f0f1ed !important;}
+
+/*- END ALL FORMS
+ -------------------------------------------------------------------------- */
+
+
+/*- ALL THE VARYING BUTTONS
+ -------------------------------------------------------------------------- */
+
+/*- SYSTEM BUTTONS NAVIGATION -- */
+.page-subnav {min-width:100%; border-bottom:1px solid #e8e8e9; margin:-5px 0 0 0; padding-bottom:5px}
+ul.page-subnav li { display:inline; margin:0; padding:0}
+.ie7 ul.page-subnav li {margin:0 3px 0 0;}
+.task-subnav {border:0 !important; margin:0 !important; padding:0 !important} /* { this class rids the navigation of any borders made by page-subnav } */
+.task-subnav li {border:0 !important; margin:0 3px 0 0 !important; padding:0 !important; display:inline-block}
+
+/* System buttons */
+.round { cursor:pointer; cursor:hand; line-height:27px; height:27px; background:url(images/button.gif) no-repeat right top; padding-right:20px; display:inline-block}
+.round ins {  background:url(images/button.gif) no-repeat left top; height:27px; line-height:27px; display:inline-block; padding-left:4px}
+a.round:hover {background-position:right -155px;}
+a.round:hover ins {background-position:left -155px;}
+.system-buttons {background-image: url('images/system-icons.png'); background-repeat:no-repeat; padding:4px 0% 4px 20px; color:#444 !important; text-transform:uppercase; font-size:0.8em}
+.approval {background-position:-5px -239px;}
+.accept {background-position:-5px -254px}
+.edit {background-position:-5px -270px}
+.view-tasks {background-position:-5px -286px}
+.reject {background-position:-5px -302px}
+.archive {background-position:-5px -319px}
+.complete {background-position:-5px -335px}
+.view-history {background-position:-5px -351px}
+.yes {background-position:-5px -367px}
+.no {background-position:-5px -382px}
+.upload-document {background-position:-5px -399px}
+.delete {background-position:-5px -415px}
+.stop {background-position:-5px -430px}
+.upload-new {background-position:-5px -446px}
+.annotate {background-position:-5px -462px}
+.search {background-position:-5px -1458px}
+.clear {background-position:-5px -1492px}
+.searchBtn {display:inline-block; width:33px; height:31px; background: url('images/searchBtn.png') left top no-repeat;}
+.start {background-position:-5px -1585px}
+
+
+
+/*- ALT SYSTEM BUTTONS NAVIGATION -- */
+.page-subnav-alt {min-width:100%; margin:0px 0 0 0; padding-bottom:5px}
+ul.page-subnav-alt li { display:inline; margin:0; padding:0}
+.ie7 ul.page-subnav-alt li {margin:0 3px 0 0;}
+
+/* System buttons */
+.page-subnav-alt .round-alt { cursor:pointer; line-height:27px; height:27px; background:url(images/button2.gif) no-repeat right top; padding-right:20px; display:inline-block}
+.page-subnav-alt .round-alt ins { background:url(images/button2.gif) no-repeat left top; height:27px; line-height:27px; display:inline-block; padding-left:4px}
+.system-buttons2 {background-image: url('images/system-icons.png'); background-repeat:no-repeat; padding:4px 0% 4px 20px; color:#444 !important; text-transform:uppercase; font-size:0.7em; margin:0}
+
+/* buttons used for ADVANCED SEARCH */
+.system-buttons-alt {background-image: url('images/system-icons.png'); background-repeat:no-repeat; padding:4px 0% 4px 20px; color:#cecece !important; text-transform:uppercase; font-size:0.8em}
+.round-alt {cursor:pointer; cursor:hand; line-height:27px; height:27px; background:url(images/button_alt.gif) no-repeat right top; padding-right:20px; display:inline-block}
+.round-alt ins {background:url(images/button_alt.gif) no-repeat left top; height:27px; line-height:27px; display:inline-block; padding-left:4px}
+a.round-alt:hover {background-position:right -155px;}
+a.round-alt:hover ins {background-position:left -155px;}
+
+/*- GLOSSY SUBMIT BUTTONS - */
+.btn { float: left; background: url(images/btn_left.png) no-repeat; padding: 0 0 0 10px; margin: 0 10px 14px 35%; display:block}
+.btn a { float: left; height: 40px; background: url(images/btn_stretch.png) repeat-x left top; line-height: 40px; padding: 0 10px; color: #fff; font-family:MuseoSlab500; font-size: 1em; text-decoration: none;}
+.btn a:hover {color:#fff}
+.btn span { background: url(images/btn_right.png) no-repeat; float: left; width: 10px; height: 40px }
+
+.btn_orange { background-color: #ffb208; }
+.btn_orange:hover { background-color: #4e4e4e; }
+
+.btn_grey { background-color: #a4a4a4; }
+.btn_grey:hover { background-color: #4e4e4e; }
+
+.thinbtn {margin-left:0% !important} /*- primarily for the Your Kits Contents form -*/
+.widebtn {margin-left:40%} /*- primarily for the Premium brief wide form -*/
+
+.colFull .btn {margin: 0px 10px 14px 0%} /*- not sure this class is used or even that it works - yes it is used on the New Project page -*/
+.AdminColFull .btn {margin: 0px 0 14px 0%} /*- not sure this class is used or even that it works -*/
+
+.btn_dark { background-color: #4e4e4e; }
+.btn_dark:hover { background-color: #ffb208; }
+
+.gen-form .btn {margin-left:20%} /*- this placed the button to the right for the generic forms -*/
+.ie7 .gen-form .btn {margin-left:21.3%}
+
+#right-btn .btn, #right-btn {margin-left:0% !important} /*- For the print button in Premium Brief - takes off the margin-left 20% -*/
+
+/*- Right Nav Buttons (which appear on the elements page etc) -*/
+.right-btn {
+	float: left;
+	background: url(images/rightnav_btn_left.png) no-repeat;
+	padding: 0 0 0 10px;
+	margin: 5px 0;
+	width:97%
+}
+
+.right-btn a {
+	float: left;
+	height: 40px;
+	background: url(images/rightnav_btn_stretch.png) repeat-x left top;
+	line-height: 40px;
+	padding: 0 0px;
+	color: #fff;
+	font-size: 1em;
+	text-decoration: none;
+	min-width:95%; 
+	text-align:center
+}
+
+.right-btn a:hover {color:#fff}
+
+.right-btn span {
+	background: url(images/rightnav_btn_right.png) top right no-repeat;
+	float: left;
+	width: 10px;
+	height: 40px;
+}
+
+a.total-time { font-size:1.2em; font-family:MuseoSlab500} /*- used to make text larger on element estimations button -*/
+
+
+/*- Admin buttons (or similar buttons to the ones used within admin section ie Add User) -*/
+
+.adminLink { color:#f1b01e; text-transform:uppercase; font-size:0.8em; background-image: url('images/system-icons.png'); background-position:right -1289px; background-repeat:no-repeat; background-color:#444; padding:4px 24px 3px 4px; margin-bottom:5px; display:inline-block}
+.adminLink:hover { color:#444; text-transform:uppercase; font-size:0.8em; background-image: url('images/system-icons.png'); background-position:right -1323px; background-repeat:no-repeat; padding-right:24px; background-color:#f1b01e}
+
+.lnkSearch {color:#f1b01e !important; font-size:11px !important; margin-left:5px; margin-top:0; text-transform:uppercase;  background-image: url('images/system-icons.png'); background-position: 34px -1356px; background-repeat:no-repeat; padding-right:14px}
+.lnkSearch:hover {color:#444 !important; background-position: 34px -1243px}
+
+.lnkChange {color:#f1b01e !important; font-size:11px !important; margin-left:5px; margin-top:0; text-transform:uppercase;  background-image: url('images/system-icons.png'); background-position: 38px -1428px; background-repeat:no-repeat; padding-right:14px}
+.lnkChange:hover {color:#444 !important; background-position: 38px -1395px}
+
+.lnkGo {color:#f1b01e !important; font-size:11px !important; margin-left:5px; margin-top:0; text-transform:uppercase;  background-image: url('images/system-icons.png'); background-position: 8px -1292px; background-repeat:no-repeat; padding-right:16px}
+.lnkGo:hover {color:#444 !important;  background-position: 8px -1326px}
+  
+a.nameLink  { background:#fff !important; border:0 !important; margin:0 !important; padding:0 !important; color:#f1b01e !important; text-decoration:underline}
+a.nameLink:hover {color:#444 !important; text-decoration:none}
+             
+             
+/*- END ALL BUTTONS
+ -------------------------------------------------------------------------- */
+
+
+/*-- MAIN PROJECT & TASK LIST
+ -------------------------------------------------------------------------- */
+#apt-list {float:left; min-width:100%}
+#apt-list h2 {padding:0px 0 10px 0%; font-size:1.8em !important; margin-top:10px; letter-spacing:-0.05em}
+#apt-list h2 .ain { font-size:0.8em; color:#f1b01e}
+#apt-list ul { list-style-type:none; margin:0 2% 30px 0; border:#dadbd7 1px solid; padding:8px 2%; background:#fff}
+#apt-list ul li { padding:16px 0; border-bottom: dashed 1px #bdbfb0}
+#apt-list ul li.last-item {border-bottom:0}
+.apt-list-description { display:block; color:#424345 !important; padding:5px 0}
+.apt-list-title {color:#f1b01e !important; font-size:1.2em; padding-right:6px}
+.apt-list-yourtask-title {color:#f1b01e !important; font-size:1.2em; padding-right:6px}
+#apt-list ul li a:hover {color:#927ca0}
+.apt-list-link a {padding-left:10px; display:inline-block; color:#f1b01e}
+.apt-list-link a:hover {color:#424345 !important}
+.apt-list-arra {background: url('images/arra-right.png') right no-repeat; padding:0 0px 0 10px;}
+
+
+/*- RESERVE TIME STYLES
+ -------------------------------------------------------------------------- */
+ul#reserve-time  {width:60%; float:left; margin:0}
+ul#reserve-time li {padding:10px 0}
+ul#reserve-time li.noBorder {border-bottom:0 !important}
+ul#reserve-time em {color:#f1b01e}
+a.lnkRefresh {color:#f1b01e; text-transform:uppercase; background: url('images/arra-right.png') right no-repeat; padding-right:14px}
+a.lnkRefresh:hover {color:#444 !important; background: url('images/arra-right-hover.gif') right no-repeat}
+ul#reserve-time label { min-width: 40% !important; /* Width of labels */ display:inline-block;}
+ul#reserve-time input[type="text"], #reserve-time input[type="url"], #reserve-time input[type="email"], #reserve-time input[type="tel"], #reserve-time input[type="textarea"], #reserve-time textarea {
+	margin: 3px 0 0 0;
+	padding: 6px; 
+	width: 20% !important;
+	border: 1px solid #dadada !important;
+    background: #fff !important;
+}
+
+ul#reserve-time input[type="checkbox"] {padding:0 5px 0 0 !important; margin:0;  display:inline-block}
+.week {display:inline-block !important; min-width:21% !important; padding-bottom:3px}
+.hours {padding:0; display:block; min-width:100% !important; color:#f1b01e; padding-top:3px}
+.overspill {color:#9ea08c; padding-top:3px}
+ul#reserve-time .error-message {color:red}
+ul#ulErrorMessage { background:none; border:0; margin:-20px 0 0 0; padding:0}
+ul.reserve-input {background:none !important; border:0 !important; padding:0 !important}
+ul.reserve-input  li {border-bottom:0 !important; padding:8px 0 !important; }
+#liErrorMessage, #liOverspill, #liSaveDenied {width:98%; font-size:0.9em}
+
+/*- RIGHT NAV on Reserve Time page -- */
+#estimations-nav {background:#acae9f; width:29%; float:right; margin-right:18px; padding:0 10px 10px 10px}
+#estimations-nav h2 {color:#fff !important; padding:5px 0 10px 2%; font-size:1.6em !important; border-bottom:1px solid #caccc0; font-family:MuseoSlab500; font-weight:normal}
+#estimations-nav ul {min-width:100%; margin:0; padding:0; background:#acae9f; border:0}
+#estimations-nav ul li {padding:5px 0 10px 2%; color:#fff; border-bottom:1px solid #caccc0; font-size:1.2em}
+.reserve-desc { font-size:1.1em}
+
+/*- GRID VIEWS
+ -------------------------------------------------------------------------- */
+.aptform table {width:98%; display:table; border:1px solid #c3c4b8; border-collapse:collapse; margin:10px 0; float:left; background:#fff; font-size:12px}
+.ie7 .aptform table {min-width:90%}
+.aptform table tr th:last-child , .aptform table tr td:last-child { border-right:0}
+.aptform table tr th {color:#fff; background:#c3c4b8; padding:10px; border-bottom:1px solid #c3c4b8; border-right:1px solid #e7e7e3; border-top:1px solid #c3c4b8; font-size:0.9em; text-transform:uppercase; font-family: 'MuseoSlab500';}
+.aptform table tr td { padding:10px; border-bottom:1px dotted #e7e7e3; border-right:1px solid #e7e7e3}
+.aptform table tr td a {color:#444; padding:3px 10px; background:#d1d2c9; text-transform:uppercase; font-size:0.8em; border-top:#dfe0d9 1px solid; border-bottom:#a6a7a1 1px solid; border-left:#dfe0d9 1px solid; border-right:#a6a7a1 1px solid; }
+.aptform table tr td a:hover {color:#fff; background:#f1b01e}
+.aptform table table {display:table; border:0px solid #c3c4b8; border-collapse:collapse; margin-top:0px; float:left;  width:auto}
+.aptform table table tr {width:auto; float:left}
+.aptform table table tr td {padding:0; border:0;  float:left; color:#fff; margin:0;}
+.aptform table table tr td span {color:#fff; float:left; background-color:#f1b01e; background-image: url('images/page.gif'); background-position:0 0; margin-right:3px; padding:5px 6px 6px 5px; margin-top:0}
+.aptform table table tr td a {color:#fff; border:0; float:left; background-color:#424345; margin-right:3px; padding:7px 6px 7px 5px; background-image: url('images/page.gif'); background-position:0 -47px}
+.aptform table table tr td a:hover {color:#444; background-color:#424345; background-image: url('images/page.gif'); background-position:0 -47px}
+
+/*-- Repeater classes for Job Listing page-- */
+.table-subtitle { background-color:#f0f1eb; font-family: 'MuseoSlab500'; font-size:1.2em; }
+.table-subtitle span {margin-top:0}
+table.joblisting span { margin-top:10px; display:block; float:left;}
+
+/*- ERROR MESSAGE DESCRIPTION AT TOP OF PAGE
+ -------------------------------------------------------------------------- */
+#error-message { padding:0px 0 10px 20px; display:block; float:left}
+#error-message h3 {color:#f1411e; background: url('images/error-message-icon.png') left no-repeat; padding:5px 0 5px 24px; margin:0}
+#error-message ul { list-style-type:disc; color:#f1411e; margin:10px 0 10px 23px}
+#error-message ul li { font-size:0.9em; padding-bottom:5px}
+#error-message ul li span {color:#424345}
+
+
+/*- PAGE CURL 
+ -------------------------------------------------------------------------- */
+#pageflip {
+    position: relative;
+    right: 0; top: 0;
+    float: right;z-index:9000 
+}
+#pageflip img {
+    width: 60px; height: 62px;
+    z-index: 99;
+    position: absolute;
+    right: 0; top: 0;
+    -ms-interpolation-mode: bicubic;
+}
+#pageflip .msg_block {
+    width: 55px; height:55px;
+    overflow: hidden;
+    position: absolute;
+    right: 0; top: 0;
+    background: url(images/subscribe.png) no-repeat right top;
+}
+
+
+/*- SCROLL MESSAGE 
+ -------------------------------------------------------------------------- */
+#message a
+{
+	/* display: block before hiding */
+	display: block;
+	display: none;
+ 
+	/* link is above all other elements */
+	z-index: 9999; 
+ 
+	/* link doesn't hide text behind it */
+	opacity: .8;
+ 
+	/* link stays at same place on page */
+	position: fixed;
+ 
+	/* link goes at the bottom of the page */
+	top: 100%;
+	margin-top: -80px; /* = height + preferred bottom margin */
+ 
+	/* link is centered */
+	left: 95%;
+	margin-left: -100px; /* = half of width */
+ 
+	/* round the corners (to your preference) */
+	-moz-border-radius: 24px;
+	-webkit-border-radius: 24px;
+ 
+	/* make it big and easy to see (size, style to preferences) */
+	width: 100px;
+	line-height: 20px;
+	height: 20px;
+	padding: 10px;
+	background-color: #000;
+	font-size: 1.2em;
+	text-align: center;
+	color: #fff;
+}
+
+
+/* DIALOG BOX (pop up message on submit)
+--------------------------------------------------------------------------- */
+#dialog {position:fixed; padding:15px; z-index:200; font-family:MuseoSlab500, Arial, Helvetica; background:#444; -webkit-border-radius: 6px; border-radius: 6px;}
+#dialog-header {display:block; position:relative; padding:0px 10px 0px 10px; font-size:1.4em; text-align:center }
+#dialog-title {float:left; display:block; width:100%; padding:20px 0 10px 0}
+#dialog-close {float:right; cursor:pointer; margin:3px 3px 0 0; height:11px; width:11px; }
+#dialog-content {display:block; color:#fff; font-size:13px; text-align:center}
+#dialog-button-container { text-align:center; margin:16px 6px 16px 2px; }
+#dialog-button {font-size:1.1em; font-family:MuseoSlab500, Arial, sans-serif; padding:2px 5px 2px 5px; }
+.error {background:#444; border-top:none}
+.errorheader { color:#f1b01e; border-bottom:none}
+.errorbutton {background-color:#f1b01e; border:0; color:#444;}
+.warning {background:#444; border-top:none}
+.warningheader {color:#f1b01e; border-bottom:none}
+.warningbutton {background-color:#f1b01e; border:0; color:#444;}
+.success { border-top:none}
+.successheader {color:#f1b01e; border-bottom:none}
+.successbutton { background: url('images/message_btn.png') left top no-repeat; border:0; color:#444; width:72px; height:29px }
+.successbutton:hover
+.prompt {background:#444; border-top:none}
+.promptheader { color:#f1b01e;  border-bottom:none}
+.promptbutton { background-color:#f1b01e; border:0; color:#444;}
+
+
+/* LOG IN PAGE
+--------------------------------------------------------------------------- */
+#login-container {margin:40px auto 0 auto;  width:500px; min-height:500px; padding-bottom:60px; background:#fff url('images/404_pagecurl.jpg') top right no-repeat}
+#login-apt-logo {float:left}
+.login-apt-logo {margin:-27px 0 -8px -25px}
+#login-content-wrap {float:left; width:90%; margin:0 5%; text-align:left; padding:0}
+#login-container h1 { font-size:4em; padding:0; margin:-10px 0 0 0; font-weight:normal; color:#f1b01e}
+#login-container h2 { font-size:1.6em; padding:0; margin:10px 0 0 0; font-weight:normal; color:#f1b01e; line-height:1.2em; width:300px}
+#login-container p { line-height:26px; color: #999}
+
+
+/*- HEADER PANEL AND SLIDING OUT ADVANCED SEARCH (username and search at the very top)
+ -------------------------------------------------------------------------- */
+#header {margin:0 auto; width:1210px; padding:0px 0px 25px 0px;}
+.header-details {width:100%; display:block;}
+.tab ul.login ul {float:right; color:#b0b1a7; margin:0 44px -20px 0; padding:0; list-style-type:none;}
+.tab ul.login li {color:#b0b1a7; list-style: none; padding:0px 10px 0 10px; margin: 0; display:inline}
+.tab ul.login li label {display:inline-block; line-height: 1.8; vertical-align: middle}
+.user {background-image: url('images/system-icons.png'); background-repeat:no-repeat; background-position:0 -1160px; padding-left:24px; padding-top:2px}
+.ie7 .user {padding-top:0px}
+.tab ul.login li input { background:#b0b1a7; border:0; padding:2px 0px 3px 5px}
+.ie7 .tab ul.login li input {padding:2px 0px 2px 5px}
+.tab ul.login li .input_btn {background:#b0b1a7 url('images/ain-search-btn.png') no-repeat; width:16px; height:17px}
+.tab ul.login li .input_btn:hover { background:#f1b01e url('images/ain-search-btn.png') no-repeat}
+.tab ul.login li .search-open {color:#f1b01e}
+.tab ul.login li .search-open:hover {color:#fff}
+.tab ul.login li .search-open .open-message {background: url('images/search-icon.png') right no-repeat; padding-right:12px }
+.tab ul.login li .search-close {color:#f1b01e}
+.tab ul.login li .search-close:hover {color:#fff}
+.tab ul.login li .search-close .close-message {background: url('images/search-icon.png') right no-repeat; padding-right:12px; }
+#search-panel .content select {border: 1px solid #414141 !important; width:100%; margin:10px 0}
+.search-btns {display:block; margin-top:10px}
+.ie7 #search-toggle {padding-top:0px}
+.ie9 #search-toggle {padding-top:2px}
+#search-toggle {padding-top:1px}
+.ie8 .ain, .ie9 .ain {padding-top:2px}
+
+
+/*- ADVANCED SEARCH 
+ -------------------------------------------------------------------------- */
+/* Panel Tab/button */
+.tab {
+	height: 20px;
+	position: relative;
+    top: 0;
+    z-index: 999;
+    padding:5px 0 5px 0
+}
+.tab ul.login {
+	display: block;
+	position: relative;
+  	float: right;
+  	clear: right;
+  	height: 20px;
+	width: auto;
+	line-height: 20px;
+	margin:0;
+	right: 55px;
+  	font-size: 0.8em;
+	text-align: center; 
+	text-transform:uppercase
+}
+.tab ul.login li.left {
+  	height: 20px;
+	width: 30px;
+	padding: 0;
+	margin: 0;
+  	display: block;
+	float: left;
+}
+.tab ul.login li.right {
+  	height: 20px;
+	width: 30px;
+	padding: 0;
+	margin: 0;
+  	display: block;
+	float: left;
+}
+.tab ul.login li {
+ 	text-align: left;
+  	padding: 0 8px;
+	display: block;
+	float: left;
+	height: 20px;
+}
+
+
+/* sliding panel */
+#toppanel {
+    position: absolute;   /*Panel will overlap  content */
+    /*position: relative;*/   /*Panel will "push" the content down */
+    top: 0;
+    width:1210px;
+    z-index: 9999;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    background:#444
+}
+#search-panel {
+	width: 100%;
+	height: 270px;
+	color: #b4b4b4;
+	background: #272727;
+	overflow: hidden;
+	position: relative;
+	z-index: 3;
+	display: none;
+}
+#search-panel h2 {
+	font-size: 1.6em;
+	padding: 5px 0 10px;
+	margin: 0;
+	color: #f1b01e;
+	margin-bottom:-20px
+}
+
+#search-panel h3{
+	font-size: 1.2em;
+	padding: 10px 0 5px;
+	margin: 0;
+	color: white;
+}
+#search-panel p {
+	margin: 5px 0;
+	padding: 0;
+}
+#search-panel a {
+	text-decoration: none;
+	color: #15ADFF;
+}
+#search-panel a:hover {
+	color: white;
+}
+#search-panel a-lost-pwd {
+	display: block;
+	float: left;
+}
+#search-panel .content {
+	width: 960px;
+	margin: 0 auto;
+	padding-top: 15px;
+	text-align: left;
+	font-size: 0.85em;
+}
+#search-panel .content .left {
+	width: 280px;
+	float: left;
+	padding: 0 15px;
+	border-left: 0px solid #484848;
+	min-height:240px
+}
+#search-panel .content .right {
+	border-right: 0px solid #484848;
+}
+#search-panel .content form {
+	margin: 0 0 10px 0;
+}
+#search-panel .content label {
+	float: left;
+	padding-top: 20px;
+	clear: both;
+	width: 280px;
+	display: block;
+}
+#search-panel .content input.field {
+	border: 1px #1A1A1A solid;
+	background: #676767;
+	margin-right: 5px;
+	margin-top: 4px;
+	margin-bottom: 6px;
+	width: 200px;
+	color: white;
+	height: 16px;
+	padding:5px
+}
+#search-panel .content input:focus.field {
+	background: #545454;
+}
+
+/* BUTTONS */
+/* Login and Register buttons */
+#search-panel .content input.bt_login,
+#search-panel .content input.bt_register {
+	display: inline-block;
+	height: 24px;
+	text-align: center;
+	cursor: pointer;
+	border: none;
+	margin: 10px 0;
+}
+#search-panel .content input.bt_login {
+	width: 74px;
+}
+#search-panel .content input.bt_register {
+	width: 94px;
+	color: white;
+}
+#search-panel .lost-pwd {
+	display: block;
+	float:left;
+	clear: right;
+	padding: 15px 5px 0;
+	font-size: 0.95em;
+	text-decoration: underline;
+}
+
+
+/*- END OF HEADER & ADVANCED SEARCH */
+
+
+
+
+
+/* PAGING --------------------------------------------------------- */	
+table#paging-table td {background:#ecede6 !important; padding:0 10px 40px 0}
+#paging-table {
+	float: left;
+	margin: 0 4px 0 0;
+}	
+.page-far-left	{
+	background: url(images/paging_far_left.gif) no-repeat;
+	display: block;
+	float: left;
+	height: 24px;
+	margin: 0 4px 0 0;
+	width: 24px;
+	text-indent:-99999px
+	}
+.page-left	{
+	background: url(images/paging_left.gif) no-repeat;
+	display: block;
+	float: left;
+	height: 24px;
+	width: 24px;text-indent:-99999px
+	}
+.page-far-right	{
+	background: url(images/paging_far_right.gif) no-repeat;
+	display: block;
+	float: left;
+	height: 24px;
+	margin: 0 4px 0 4px;
+	width: 24px;text-indent:-99999px
+	}
+.page-right	{
+	background: url(images/paging_right.gif) no-repeat;
+	display: block;
+	float: left;
+	height: 24px;
+	width: 24px;text-indent:-99999px
+	}
+#page-info	{
+	float: left;
+	line-height: 16px;
+	padding: 3px 12px 0 12px;
+	}
+#paging-table a {padding:0}
+
+
+
+/* Tommy's hack styles */
+
+.fixedInputWidth input[type="text"], .aptform input[type="url"], .aptform input[type="email"], .aptform input[type="tel"], .aptform input[type="textarea"], .aptform textarea {width: 345px !important;}

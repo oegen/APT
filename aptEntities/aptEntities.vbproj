@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>
+    </SchemaVersion>
+    <ProjectGuid>{9261A1F6-AF80-4DCE-A66A-EE1445667C43}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>aptEntities</RootNamespace>
+    <AssemblyName>aptEntities</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>Windows</MyType>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>aptEntities.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>aptEntities.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Helper Entities\EntityHistory.vb" />
+    <Compile Include="Helper Entities\KitItem.vb" />
+    <Compile Include="Helper Entities\ProjectSearchFilters.vb" />
+    <Compile Include="Helper Entities\ProjectSortBy.vb" />
+    <Compile Include="Helper Entities\ReserveWeek.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Petri Net Entities\AccessLevel.vb" />
+    <Compile Include="Petri Net Entities\Arc.vb" />
+    <Compile Include="Petri Net Entities\ArcResponse.vb" />
+    <Compile Include="Petri Net Entities\ArcType.vb" />
+    <Compile Include="Petri Net Entities\Case.vb" />
+    <Compile Include="Petri Net Entities\CaseStatus.vb" />
+    <Compile Include="Petri Net Entities\Entity.vb" />
+    <Compile Include="Petri Net Entities\Place.vb" />
+    <Compile Include="Petri Net Entities\PlaceType.vb" />
+    <Compile Include="Petri Net Entities\SecurityLookup.vb" />
+    <Compile Include="Petri Net Entities\Task.vb" />
+    <Compile Include="Petri Net Entities\Token.vb" />
+    <Compile Include="Petri Net Entities\TokenDocument.vb" />
+    <Compile Include="Petri Net Entities\TokenStatus.vb" />
+    <Compile Include="Petri Net Entities\Transition.vb" />
+    <Compile Include="Petri Net Entities\TransitionSecurity.vb" />
+    <Compile Include="Petri Net Entities\Trigger.vb" />
+    <Compile Include="Petri Net Entities\Workflow.vb" />
+    <Compile Include="Petri Net Entities\WorkItem.vb" />
+    <Compile Include="Petri Net Entities\WorkitemSecurity.vb" />
+    <Compile Include="Petri Net Entities\WorkitemStatus.vb" />
+    <Compile Include="Project Entities\AdditionalElement.vb" />
+    <Compile Include="Project Entities\BlockMeetingException.vb" />
+    <Compile Include="Project Entities\DocumentVersion.vb" />
+    <Compile Include="Project Entities\FreelancerTime.vb" />
+    <Compile Include="Project Entities\KitQuote.vb" />
+    <Compile Include="Project Entities\NewBBCItem.vb" />
+    <Compile Include="Project Entities\ProjectBBCItem.vb" />
+    <Compile Include="Project Entities\ProjectCostings.vb" />
+    <Compile Include="Project Entities\ElementAdditionalDetails.vb" />
+    <Compile Include="Project Entities\Adhoc.vb" />
+    <Compile Include="Project Entities\AptUser.vb" />
+    <Compile Include="Project Entities\Audit.vb" />
+    <Compile Include="Project Entities\AuditChangeType.vb" />
+    <Compile Include="Project Entities\AuditSection.vb" />
+    <Compile Include="Project Entities\AptList.vb" />
+    <Compile Include="Project Entities\ElementType.vb" />
+    <Compile Include="Project Entities\Element.vb" />
+    <Compile Include="Project Entities\ElementArtworkDetails.vb" />
+    <Compile Include="Project Entities\ElementKittingDetails.vb" />
+    <Compile Include="Project Entities\ElementWorkflowState.vb" />
+    <Compile Include="Project Entities\EntitySchemaMapping.vb" />
+    <Compile Include="Project Entities\Kit.vb" />
+    <Compile Include="Project Entities\KitElements.vb" />
+    <Compile Include="Project Entities\ListNode.vb" />
+    <Compile Include="Project Entities\PremiumBrief.vb" />
+    <Compile Include="Project Entities\PremiumElementDetails.vb" />
+    <Compile Include="Project Entities\Project.vb" />
+    <Compile Include="Project Entities\ProjectAccess.vb" />
+    <Compile Include="Project Entities\ProjectAccessLevel.vb" />
+    <Compile Include="Project Entities\ProjectDocument.vb" />
+    <Compile Include="Project Entities\ProjectDocumentCategory.vb" />
+    <Compile Include="Project Entities\ProjectEntity.vb" />
+    <Compile Include="Project Entities\ProjectKittingBrief.vb" />
+    <Compile Include="Project Entities\ProjectRoleAssociation.vb" />
+    <Compile Include="Project Entities\ProjectSecurityLevel.vb" />
+    <Compile Include="Project Entities\ReservedTime.vb" />
+    <Compile Include="Project Entities\Role.vb" />
+    <Compile Include="Project Entities\Schema.vb" />
+    <Compile Include="Project Entities\SchemaData.vb" />
+    <Compile Include="Project Entities\SchemaDefinition.vb" />
+    <Compile Include="Project Entities\SubclassType.vb" />
+    <Compile Include="Project Entities\Tag.vb" />
+    <Compile Include="Project Entities\TagList.vb" />
+    <Compile Include="Project Entities\TaskLibraryItem.vb" />
+    <Compile Include="Project Entities\Timesheet.vb" />
+    <Compile Include="Project Entities\TimesheetReason.vb" />
+    <Compile Include="Project Entities\AptLogin.vb" />
+    <Compile Include="Project Entities\UserRole.vb" />
+    <Compile Include="Project Entities\WorkingWeek.vb" />
+    <Compile Include="Project Entities\WorkingWeekException.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

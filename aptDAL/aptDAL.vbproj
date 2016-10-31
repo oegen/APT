@@ -1,0 +1,196 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>
+    </SchemaVersion>
+    <ProjectGuid>{7FDB7376-A0BC-4F1C-AEDE-33A0CDE232B6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>aptDAL</RootNamespace>
+    <AssemblyName>aptDAL</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>Windows</MyType>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>aptDAL.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>aptDAL.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="GenericDAL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dependencies\GenericDAL.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Context\APTContext.vb" />
+    <Compile Include="DAOGetter.vb" />
+    <Compile Include="DAO\Petri Net DAO\AccessLevelDAO.vb" />
+    <Compile Include="DAO\Petri Net DAO\ArcDAO.vb" />
+    <Compile Include="DAO\Petri Net DAO\ArcResponseDAO.vb" />
+    <Compile Include="DAO\Petri Net DAO\ArcTypeDAO.vb" />
+    <Compile Include="DAO\Petri Net DAO\CaseDAO.vb" />
+    <Compile Include="DAO\Petri Net DAO\CaseStatusDAO.vb" />
+    <Compile Include="DAO\Petri Net DAO\EntityDAO.vb" />
+    <Compile Include="DAO\Petri Net DAO\PlaceDAO.vb" />
+    <Compile Include="DAO\Petri Net DAO\PlaceTypeDAO.vb" />
+    <Compile Include="DAO\Petri Net DAO\SecurityLookupDAO.vb" />
+    <Compile Include="DAO\Petri Net DAO\TaskDAO.vb" />
+    <Compile Include="DAO\Petri Net DAO\TokenDAO.vb" />
+    <Compile Include="DAO\Petri Net DAO\TokenDocumentDAO.vb" />
+    <Compile Include="DAO\Petri Net DAO\TokenStatusDAO.vb" />
+    <Compile Include="DAO\Petri Net DAO\TransitionDAO.vb" />
+    <Compile Include="DAO\Petri Net DAO\TransitionSecurityDAO.vb" />
+    <Compile Include="DAO\Petri Net DAO\TriggerDAO.vb" />
+    <Compile Include="DAO\Petri Net DAO\WorkflowDAO.vb" />
+    <Compile Include="DAO\Petri Net DAO\WorkitemDAO.vb" />
+    <Compile Include="DAO\Petri Net DAO\WorkitemSecurityDAO.vb" />
+    <Compile Include="DAO\Petri Net DAO\WorkitemStatusDAO.vb" />
+    <Compile Include="DAO\Project DAO\AdditionalElementDAO.vb" />
+    <Compile Include="DAO\Project DAO\BlockMeetingExceptionDAO.vb" />
+    <Compile Include="DAO\Project DAO\DocumentVersionDAO.vb" />
+    <Compile Include="DAO\Project DAO\ElementAdditionalDetailsDAO.vb" />
+    <Compile Include="DAO\Project DAO\AdhocDAO.vb" />
+    <Compile Include="DAO\Project DAO\ElementTypeDAO.vb" />
+    <Compile Include="DAO\Project DAO\AptUserDAO.vb" />
+    <Compile Include="DAO\Project DAO\AuditChangeTypeDAO.vb" />
+    <Compile Include="DAO\Project DAO\AuditDAO.vb" />
+    <Compile Include="DAO\Project DAO\AuditSectionDAO.vb" />
+    <Compile Include="DAO\Project DAO\ElementArtworkDetailsDAO.vb" />
+    <Compile Include="DAO\Project DAO\ElementDAO.vb" />
+    <Compile Include="DAO\Project DAO\ElementKittingDetailsDAO.vb" />
+    <Compile Include="DAO\Project DAO\ElementWorkflowStateDAO.vb" />
+    <Compile Include="DAO\Project DAO\EntitySchemaMappingDAO.vb" />
+    <Compile Include="DAO\Project DAO\FreelancerDAO.vb" />
+    <Compile Include="DAO\Project DAO\KitDAO.vb" />
+    <Compile Include="DAO\Project DAO\KitElementsDAO.vb" />
+    <Compile Include="DAO\Project DAO\KitQuoteDAO.vb" />
+    <Compile Include="DAO\Project DAO\ListDAO.vb" />
+    <Compile Include="DAO\Project DAO\ListNodeDAO.vb" />
+    <Compile Include="DAO\Project DAO\NewBBCItemDAO.vb" />
+    <Compile Include="DAO\Project DAO\PremiumBriefDAO.vb" />
+    <Compile Include="DAO\Project DAO\PremiumElementDetailsDAO.vb" />
+    <Compile Include="DAO\Project DAO\ProjectAccessDAO.vb" />
+    <Compile Include="DAO\Project DAO\ProjectAccessLevelDAO.vb" />
+    <Compile Include="DAO\Project DAO\ProjectBBCItemDAO.vb" />
+    <Compile Include="DAO\Project DAO\ProjectCostingsDAO.vb" />
+    <Compile Include="DAO\Project DAO\ProjectDAO.vb" />
+    <Compile Include="DAO\Project DAO\ProjectDocumentCategoryDAO.vb" />
+    <Compile Include="DAO\Project DAO\ProjectDocumentDAO.vb" />
+    <Compile Include="DAO\Project DAO\ProjectEntityDAO.vb" />
+    <Compile Include="DAO\Project DAO\ProjectKittingInfoDAO.vb" />
+    <Compile Include="DAO\Project DAO\ProjectRoleAssociationDAO.vb" />
+    <Compile Include="DAO\Project DAO\ProjectSecurityLevelDAO.vb" />
+    <Compile Include="DAO\Project DAO\ReservedTimeDAO.vb" />
+    <Compile Include="DAO\Project DAO\RoleDAO.vb" />
+    <Compile Include="DAO\Project DAO\SchemaDAO.vb" />
+    <Compile Include="DAO\Project DAO\SchemaDataDAO.vb" />
+    <Compile Include="DAO\Project DAO\SchemaDefinitionDAO.vb" />
+    <Compile Include="DAO\Project DAO\SubclassTypeDAO.vb" />
+    <Compile Include="DAO\Project DAO\TagDAO.vb" />
+    <Compile Include="DAO\Project DAO\TagListDAO.vb" />
+    <Compile Include="DAO\Project DAO\TaskLibraryItemDAO.vb" />
+    <Compile Include="DAO\Project DAO\TimesheetDAO.vb" />
+    <Compile Include="DAO\Project DAO\TimesheetReasonDAO.vb" />
+    <Compile Include="DAO\Project DAO\AptLoginDAO.vb" />
+    <Compile Include="DAO\Project DAO\UserRoleDAO.vb" />
+    <Compile Include="DAO\Project DAO\WorkingWeekDAO.vb" />
+    <Compile Include="DAO\Project DAO\WorkingWeekExceptionDAO.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\aptEntities\aptEntities.vbproj">
+      <Project>{9261A1F6-AF80-4DCE-A66A-EE1445667C43}</Project>
+      <Name>aptEntities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

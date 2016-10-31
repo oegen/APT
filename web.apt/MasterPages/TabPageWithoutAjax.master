@@ -1,0 +1,58 @@
+﻿<%@ Master Language="VB" CodeFile="TabPageWithoutAjax.master.vb" Inherits="MasterPages_TabPageWithoutAjax" MasterPageFile="~/MasterPages/MasterPage.master" %>
+<%@ Register Src="~/Controls/Navigation/SubNavProject.ascx" TagPrefix="oegen" TagName="SubNavProject" %>
+<%@ Register Src="~/Controls/Layout/ContentHeader.ascx" TagPrefix="oegen" TagName="ContentHeader" %>
+<%@ Register Src="~/Controls/Layout/MessagePanel.ascx" TagPrefix="oegen" TagName="MessagePanel" %>
+<%@ Register Src="~/Controls/Project/ProjectTags.ascx" TagPrefix="oegen" TagName="ProjectTags" %>
+<%@ Register Src="~/Controls/Element/Element.ascx" TagPrefix="oegen" TagName="Element" %>
+
+<asp:Content ID="content1" runat="server" ContentPlaceHolderID="ContentPlaceHolder1">
+
+    <div id="maincontent" class="group">
+        <oegen:subnavproject ID="ctrlSubNavProject" runat="server" />
+
+        <div id="content" class="group">
+            <oegen:ContentHeader ID="ctrlContentHeader" runat="server" ShowOpenCloseMessage="true" />
+
+            <!-- Message Panel -->
+            <oegen:MessagePanel ID="ctrlMessagePanel" runat="server" />
+
+            <nav>
+                <div id="tabs" class="group ui-tabs ui-widget ui-widget-content ui-corner-all">                
+                    <div id="tab-nav-wrap" class="group">
+                        <ul class="group ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all">
+                            <li id="liInfo" runat="server"><asp:LinkButton ID="lnkInfo" runat="server">Info</asp:LinkButton></li>
+                            <li id="liTasks" runat="server"><asp:LinkButton ID="lnkTasks" runat="server">Tasks</asp:LinkButton></li>
+                            <li id="liElements" runat="server"><asp:LinkButton ID="lnkElements" runat="server">Elements</asp:LinkButton></li>
+                            <li id="liDocuments" runat="server"><asp:LinkButton ID="lnkDocuments" runat="server">Documents</asp:LinkButton></li>
+                            <li id="liTags" runat="server"><asp:LinkButton ID="lnkTags" runat="server">Tags</asp:LinkButton></li>
+                            <li id="liDashboard" runat="server" visible="false"><asp:LinkButton ID="lnkDashboard" runat="server">Dashboard</asp:LinkButton></li>
+                        </ul>
+                    </div>
+                    
+                    <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+                        
+                    </asp:ContentPlaceHolder>
+                
+                </div>
+            </nav>
+
+        </div>
+     </div>
+
+
+
+     <script type="text/javascript">
+         $(function () {
+             $("#accordion").accordion();
+         });
+     </script>
+
+    <script type="text/javascript">
+        $(function () {
+            $("tr:last-child td").addClass("last-item");
+        });
+    </script>
+
+</asp:Content>
+
+

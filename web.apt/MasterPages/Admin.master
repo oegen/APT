@@ -1,0 +1,5 @@
+﻿<%@ Master Language="VB" CodeFile="Admin.master.vb" Inherits="MasterPages_Admin" MasterPageFile="~/MasterPages/MasterPage.master" %>
+
+<asp:Content ID="content1" runat="server" ContentPlaceHolderID="ContentPlaceHolder1">
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>     
+</asp:Content>
